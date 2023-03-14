@@ -29,14 +29,14 @@ public class Player : MonoBehaviour
     {
         if (inputJump && isGrounded)
         {
-            rb.AddForce(Vector3.up*5,ForceMode.Impulse);
+            rb.AddForce(Vector3.up*6,ForceMode.Impulse);
             inputJump = false;
             isGrounded = false;
         }
 
         if (horizontal != 0)
         {
-            transform.Translate(Vector3.right*horizontal*Time.deltaTime*5);
+            transform.Translate(Vector3.right*horizontal*Time.deltaTime*7);
         }
     }
 
