@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = System.Random;
 
 public class TerrainGeneration : MonoBehaviour
 {
@@ -9,10 +10,10 @@ public class TerrainGeneration : MonoBehaviour
     void Start()
     {
         Random rd = new Random();
-        bool[,] Map = new bool[50, 10];
+        bool[,] Map = new bool[200, 10];
         int randStart = rd.Next(0, 10);
         Map[0, randStart] = true;
-        for (int i = 1; i < 50; i++)
+        for (int i = 1; i < 200; i++)
         {
             int randTemp = rd.Next(0, 10);
             while (Math.Abs(randStart - randTemp) > 1)
@@ -24,14 +25,14 @@ public class TerrainGeneration : MonoBehaviour
             randStart = randTemp;
         }
 
-        for (int i = 0; i < 50; i++)
+        for (int i = 0; i < 200; i++)
         {
             for (int j = 0; j < 10; j++)
             {
                 if (Map[i, j])
                 {
                     Vector3 temp = new Vector3(i, j, 0);
-                    Instantiate(dirtFloor, temp, Quaternion.Identity);
+                    Instantiate(dirtFloor, temp, Quaternion.identity);
                 }
             }
         }
