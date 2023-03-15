@@ -1,10 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.UIElements;
 using UnityEngine;
-using UnityEngine.Experimental.GlobalIllumination;
-
 public class MoveTeub : MonoBehaviour
 {
     private GameObject player;
